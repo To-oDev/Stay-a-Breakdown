@@ -3,7 +3,6 @@ local PlayerService = game:GetService("Players")
 local StarterGui = game:GetService("StarterGui")
 
 ReplicatedFirst:RemoveDefaultLoadingScreen()
-StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, false)
 
 local connection
 
@@ -28,7 +27,6 @@ connection = loadingScreen:GetAttributeChangedSignal("Active"):Connect(function(
 		task.delay(3, function()
 			connection:Disconnect()
 			loadingScreen:Destroy()
-			StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, true)
 		end)
 	end
 end)

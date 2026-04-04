@@ -1,5 +1,7 @@
+local ReplicatedFirst = game:GetService("ReplicatedFirst")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local PlayerService = game:GetService("Players")
+local StarterGui = game:GetService("StarterGui")
 local TweenService = game:GetService("TweenService")
 local SoundService = game:GetService("SoundService")
 local Lighting = game:GetService("Lighting")
@@ -24,6 +26,8 @@ local blur = script:WaitForChild("Blur")
 local tweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
 
 playButton.Activated:Once(function()
+	ReplicatedFirst.CoreGuiController:SetAttribute("CoreGuiVisible", true)
+	
 	local fadeTween = canvasGroup:TweenTransparency(1, tweenInfo)
 	fadeTween:Play()
 
